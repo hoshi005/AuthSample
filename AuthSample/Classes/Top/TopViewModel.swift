@@ -1,0 +1,60 @@
+//
+//  TopViewModel.swift
+//  AuthSample
+//
+//  Created by Susumu Hoshikawa on 2019/11/02.
+//  Copyright © 2019 SH Lab, Inc. All rights reserved.
+//
+
+import Foundation
+import Firebase
+import Combine
+
+class TopViewModel: ObservableObject {
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    @Published var userName = ""
+    @Published var email = ""
+    @Published var isEmailVerified = false
+    @Published var isSiginIn = false
+    
+    func setupHandler() {
+        print(#function)
+        
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            print("### ユーザ情報に変更あり. ###")
+            
+            if let user = user {
+                print("ユーザ情報取得: \(user)")
+                self.userName = user.displayName ?? "(no data)"
+                self.email = user.email ?? "(no data)"
+                self.isEmailVerified = user.isEmailVerified
+            } else {
+                print("未ログイン")
+                self.userName = ""
+                self.email = ""
+                self.isEmailVerified = false
+            }
+            
+            self.isSiginIn = Auth.auth().currentUser != nil
+        }
+    }
+    
+    func removeHandler() {
+        print(#function)
+        
+        if let handle = handle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+    }
+    
+    func signOut() {
+        print(#function)
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error)
+        }
+    }
+}
