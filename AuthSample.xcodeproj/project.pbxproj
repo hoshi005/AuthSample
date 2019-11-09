@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		EF086504236CF79F00F424DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF086503236CF79F00F424DE /* Assets.xcassets */; };
 		EF086507236CF79F00F424DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF086506236CF79F00F424DE /* Preview Assets.xcassets */; };
 		EF08650A236CF79F00F424DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF086508236CF79F00F424DE /* LaunchScreen.storyboard */; };
+		EF3BDA7B2376F8CF0052854A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF3BDA7A2376F8CF0052854A /* README.md */; };
 		EF7E2091236CFCB100794CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */; };
 		EF7E20B42372379C00794CC7 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A72372379C00794CC7 /* TopViewModel.swift */; };
 		EF7E20B52372379C00794CC7 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A82372379C00794CC7 /* TopView.swift */; };
@@ -32,6 +33,7 @@
 		EF086506236CF79F00F424DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF086509236CF79F00F424DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF08650B236CF79F00F424DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3BDA7A2376F8CF0052854A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7E20A72372379C00794CC7 /* TopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		EF7E20A82372379C00794CC7 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		EF0864F1236CF79D00F424DE = {
 			isa = PBXGroup;
 			children = (
+				EF3BDA7A2376F8CF0052854A /* README.md */,
 				EF0864FC236CF79D00F424DE /* AuthSample */,
 				EF0864FB236CF79D00F424DE /* Products */,
 				C02964EF962CCC5EF394DE24 /* Pods */,
@@ -225,6 +228,7 @@
 			files = (
 				EF08650A236CF79F00F424DE /* LaunchScreen.storyboard in Resources */,
 				EF7E2091236CFCB100794CC7 /* GoogleService-Info.plist in Resources */,
+				EF3BDA7B2376F8CF0052854A /* README.md in Resources */,
 				EF086507236CF79F00F424DE /* Preview Assets.xcassets in Resources */,
 				EF086504236CF79F00F424DE /* Assets.xcassets in Resources */,
 			);
