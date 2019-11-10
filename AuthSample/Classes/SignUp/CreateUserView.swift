@@ -12,13 +12,11 @@ struct CreateUserView: View {
     
     @ObservedObject(initialValue: CreateUserViewModel()) var viewModel
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             VStack {
-                
-                TextField("User Name.", text: $viewModel.userName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .border(Color.gray, width: 2)
                 
                 TextField("your Email Address.", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -34,7 +32,7 @@ struct CreateUserView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.createUser()
+                    self.viewModel.createUser(mode: self.presentationMode)
                 }) {
                     HStack {
                         Image(systemName: "person.badge.plus.fill")

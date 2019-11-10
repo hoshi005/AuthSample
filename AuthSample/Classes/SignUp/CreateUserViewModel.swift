@@ -8,19 +8,17 @@
 
 import Combine
 import Firebase
+import SwiftUI
 
 class CreateUserViewModel: ObservableObject {
     
-    @Published var userName = ""
     @Published var email = ""
     @Published var password = ""
     @Published var confirmPassword = ""
     
+    private var mode: Binding<PresentationMode>?
+    
     var validInput: Bool {
-        
-        if userName.isEmpty {
-            return false
-        }
         if email.isEmpty {
             return false
         }
@@ -36,14 +34,15 @@ class CreateUserViewModel: ObservableObject {
         return true
     }
     
-    func createUser() {
+    func createUser(mode: Binding<PresentationMode>) {
         print(#function)
+        self.mode = mode
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
             
             if let user = authResult?.user {
-                self.updateDisplayName(self.userName, of: user)
+                self.sendEmailVarification(to: user)
             }
             
             self.showError(error)
@@ -81,6 +80,7 @@ extension CreateUserViewModel {
     
     private func showSignUpCompletion() {
         print(#function)
+        mode?.wrappedValue.dismiss()
     }
     
     private func showError(_ errorOrNil: Error?) {
