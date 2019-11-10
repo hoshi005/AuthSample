@@ -19,25 +19,30 @@ class TopViewModel: ObservableObject {
     @Published var isEmailVerified = false
     @Published var isSiginIn = false
     
+    func setupUserInfo() {
+        print(#function)
+        
+        if let user = Auth.auth().currentUser {
+            print("ユーザ情報取得: \(user)")
+            self.userName = user.displayName ?? "(no data)"
+            self.email = user.email ?? "(no data)"
+            self.isEmailVerified = user.isEmailVerified
+        } else {
+            print("未ログイン")
+            self.userName = ""
+            self.email = ""
+            self.isEmailVerified = false
+        }
+        
+        self.isSiginIn = Auth.auth().currentUser != nil
+    }
+    
     func setupHandler() {
         print(#function)
         
         handle = Auth.auth().addStateDidChangeListener { auth, user in
             print("### ユーザ情報に変更あり. ###")
-            
-            if let user = user {
-                print("ユーザ情報取得: \(user)")
-                self.userName = user.displayName ?? "(no data)"
-                self.email = user.email ?? "(no data)"
-                self.isEmailVerified = user.isEmailVerified
-            } else {
-                print("未ログイン")
-                self.userName = ""
-                self.email = ""
-                self.isEmailVerified = false
-            }
-            
-            self.isSiginIn = Auth.auth().currentUser != nil
+            self.setupUserInfo()
         }
     }
     
