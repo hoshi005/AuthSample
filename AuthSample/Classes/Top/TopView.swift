@@ -94,6 +94,33 @@ extension TopView {
             .font(.headline)
             .frame(maxWidth: .infinity, alignment: .leading)
             
+            // ユーザ名変更ボタン.
+            Button(action: {
+                self.showUserInfoModal.toggle()
+            }) {
+                HStack {
+                    Image(systemName: "pencil.and.ellipsis.rectangle")
+                        .imageScale(.large)
+                    Text("ユーザ名の変更")
+                }
+            }
+            .sheet(isPresented: $showUserInfoModal, onDismiss: {
+                self.viewModel.setupUserInfo()
+            }) {
+                UserInfoView()
+            }
+            
+            // ユーザ情報のリフレッシュボタン.
+            Button(action: {
+                self.viewModel.reloadUserInfo()
+            }) {
+                HStack {
+                    Image(systemName: "arrow.clockwise.circle")
+                        .imageScale(.large)
+                    Text("ユーザ情報更新")
+                }
+            }
+            
             // サインアウトボタン.
             Button(action: {
                 self.showSignOutAlert.toggle()
@@ -115,21 +142,6 @@ extension TopView {
                         self.viewModel.signOut()
                     }
                 )
-            }
-            
-            Button(action: {
-                self.showUserInfoModal.toggle()
-            }) {
-                HStack {
-                    Image(systemName: "arrow.clockwise.circle")
-                        .imageScale(.large)
-                    Text("ユーザ情報更新")
-                }
-            }
-            .sheet(isPresented: $showUserInfoModal, onDismiss: {
-                self.viewModel.setupUserInfo()
-            }) {
-                UserInfoView()
             }
         }
     }

@@ -46,6 +46,20 @@ class TopViewModel: ObservableObject {
         }
     }
     
+    /// 最新のユーザ情報を取得する.
+    func reloadUserInfo() {
+        if let user = Auth.auth().currentUser {
+            user.reload { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    print("error = \(error.localizedDescription)")
+                    return
+                }
+                self.setupUserInfo()
+            }
+        }
+    }
+    
     func removeHandler() {
         print(#function)
         
