@@ -23,7 +23,9 @@ struct ForgotPasswordView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.sendMail(mode: self.presentationMode)
+                    self.viewModel.sendMail {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     HStack {
                         Image(systemName: "lock.circle")

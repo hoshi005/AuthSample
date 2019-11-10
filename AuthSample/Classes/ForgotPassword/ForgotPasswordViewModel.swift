@@ -6,9 +6,8 @@
 //  Copyright © 2019 SH Lab, Inc. All rights reserved.
 //
 
-import Combine
+import Foundation
 import Firebase
-import SwiftUI
 
 class ForgotPasswordViewModel: ObservableObject {
     
@@ -18,7 +17,7 @@ class ForgotPasswordViewModel: ObservableObject {
         !email.isEmpty
     }
     
-    func sendMail(mode: Binding<PresentationMode>) {
+    func sendMail(completion handler: @escaping () -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 print("error = \(error.localizedDescription)")
@@ -26,7 +25,7 @@ class ForgotPasswordViewModel: ObservableObject {
             }
             
             print("送信成功.")
-            mode.wrappedValue.dismiss()
+            handler()
         }
     }
 }

@@ -22,7 +22,9 @@ struct UserInfoView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.updateDisplayName(mode: self.presentationMode)
+                    self.viewModel.updateDisplayName {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     HStack {
                         Image(systemName: "person")

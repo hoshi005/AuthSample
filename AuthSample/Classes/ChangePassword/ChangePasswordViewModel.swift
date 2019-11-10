@@ -8,8 +8,6 @@
 
 import Foundation
 import Firebase
-import Combine
-import SwiftUI
 
 class ChangePasswordViewModel: ObservableObject {
     
@@ -29,7 +27,7 @@ class ChangePasswordViewModel: ObservableObject {
         return true
     }
     
-    func changePassword(mode: Binding<PresentationMode>) {
+    func changePassword(completion handler: @escaping () -> ()) {
         print(#function)
         
         Auth.auth().currentUser?.updatePassword(to: self.password) { error in
@@ -39,7 +37,8 @@ class ChangePasswordViewModel: ObservableObject {
             }
             
             print("success change password !")
-            mode.wrappedValue.dismiss()
+            
+            handler()
         }
     }
 }

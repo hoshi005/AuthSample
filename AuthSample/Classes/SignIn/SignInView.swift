@@ -27,7 +27,9 @@ struct SignInView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.signin(mode: self.presentationMode)
+                    self.viewModel.signin {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     HStack {
                         Image(systemName: "person.badge.plus.fill")

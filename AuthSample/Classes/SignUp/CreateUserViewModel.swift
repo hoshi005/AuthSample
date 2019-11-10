@@ -6,9 +6,8 @@
 //  Copyright © 2019 SH Lab, Inc. All rights reserved.
 //
 
-import Combine
+import Foundation
 import Firebase
-import SwiftUI
 
 class CreateUserViewModel: ObservableObject {
     
@@ -16,7 +15,7 @@ class CreateUserViewModel: ObservableObject {
     @Published var password = ""
     @Published var confirmPassword = ""
     
-    private var mode: Binding<PresentationMode>?
+    private var handler: (() -> ())?
     
     var validInput: Bool {
         if email.isEmpty {
@@ -34,9 +33,9 @@ class CreateUserViewModel: ObservableObject {
         return true
     }
     
-    func createUser(mode: Binding<PresentationMode>) {
+    func createUser(completion handler: @escaping () -> ()) {
         print(#function)
-        self.mode = mode
+        self.handler = handler
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
@@ -80,7 +79,7 @@ extension CreateUserViewModel {
     
     private func showSignUpCompletion() {
         print(#function)
-        mode?.wrappedValue.dismiss()
+        handler?()
     }
     
     private func showError(_ errorOrNil: Error?) {

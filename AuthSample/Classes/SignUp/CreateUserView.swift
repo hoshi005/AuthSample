@@ -32,7 +32,9 @@ struct CreateUserView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.createUser(mode: self.presentationMode)
+                    self.viewModel.createUser {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     HStack {
                         Image(systemName: "person.badge.plus.fill")

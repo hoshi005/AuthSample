@@ -6,9 +6,8 @@
 //  Copyright © 2019 SH Lab, Inc. All rights reserved.
 //
 
-import Combine
+import Foundation
 import Firebase
-import SwiftUI
 
 class SignInViewModel: ObservableObject {
     
@@ -19,14 +18,14 @@ class SignInViewModel: ObservableObject {
         !email.isEmpty && !password.isEmpty
     }
     
-    func signin(mode: Binding<PresentationMode>) {
+    func signin(completion handler: @escaping () -> ()) {
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
             
             if let user = authResult?.user {
                 print("ログイン成功：: \(user)")
-                mode.wrappedValue.dismiss()
+                handler()
             }
             
             self.showError(error)

@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import SwiftUI
 
 class UserInfoViewModel: ObservableObject {
     
@@ -22,7 +21,7 @@ class UserInfoViewModel: ObservableObject {
         self.displayName = Auth.auth().currentUser?.displayName ?? ""
     }
     
-    func updateDisplayName(mode: Binding<PresentationMode>) {
+    func updateDisplayName(completion handler: @escaping () -> ()) {
         print(#function)
         
         guard let user = Auth.auth().currentUser else { return }
@@ -38,7 +37,7 @@ class UserInfoViewModel: ObservableObject {
             print("display name 成功")
             print("user = \(user.displayName ?? "no data !")")
             
-            mode.wrappedValue.dismiss()
+            handler()
         }
     }
 }

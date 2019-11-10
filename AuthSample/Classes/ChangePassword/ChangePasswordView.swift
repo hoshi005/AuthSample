@@ -27,7 +27,9 @@ struct ChangePasswordView: View {
                     .border(Color.gray, width: 2)
                 
                 Button(action: {
-                    self.viewModel.changePassword(mode: self.presentationMode)
+                    self.viewModel.changePassword {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     HStack {
                         Image(systemName: "lock.rotation")
