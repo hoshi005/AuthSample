@@ -15,6 +15,8 @@
 		EF3BDA802377A66E0052854A /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA7F2377A66E0052854A /* UserInfoViewModel.swift */; };
 		EF3BDA832377B6550052854A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA822377B6550052854A /* ChangePasswordView.swift */; };
 		EF3BDA852377B6620052854A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA842377B6620052854A /* ChangePasswordViewModel.swift */; };
+		EF3BDA882377BB320052854A /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA872377BB320052854A /* ChangeEmailView.swift */; };
+		EF3BDA8A2377BB420052854A /* ChangeEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA892377BB420052854A /* ChangeEmailViewModel.swift */; };
 		EF7E2091236CFCB100794CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */; };
 		EF7E20B42372379C00794CC7 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A72372379C00794CC7 /* TopViewModel.swift */; };
 		EF7E20B52372379C00794CC7 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A82372379C00794CC7 /* TopView.swift */; };
@@ -42,6 +44,8 @@
 		EF3BDA7F2377A66E0052854A /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		EF3BDA822377B6550052854A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		EF3BDA842377B6620052854A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		EF3BDA872377BB320052854A /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
+		EF3BDA892377BB420052854A /* ChangeEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewModel.swift; sourceTree = "<group>"; };
 		EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7E20A72372379C00794CC7 /* TopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		EF7E20A82372379C00794CC7 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
+		EF3BDA862377BB1D0052854A /* ChangeEmail */ = {
+			isa = PBXGroup;
+			children = (
+				EF3BDA872377BB320052854A /* ChangeEmailView.swift */,
+				EF3BDA892377BB420052854A /* ChangeEmailViewModel.swift */,
+			);
+			path = ChangeEmail;
+			sourceTree = "<group>";
+		};
 		EF7E20A52372379C00794CC7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 				EF7E20A92372379C00794CC7 /* ForgotPassword */,
 				EF3BDA7C2377A6410052854A /* UserInfo */,
 				EF3BDA812377B63F0052854A /* ChangePassword */,
+				EF3BDA862377BB1D0052854A /* ChangeEmail */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -312,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7E20B62372379C00794CC7 /* ForgotPasswordViewModel.swift in Sources */,
+				EF3BDA882377BB320052854A /* ChangeEmailView.swift in Sources */,
 				EF7E20BA2372379C00794CC7 /* SignInView.swift in Sources */,
 				EF7E20B92372379C00794CC7 /* CreateUserView.swift in Sources */,
 				EF7E20BC2372379C00794CC7 /* AppDelegate.swift in Sources */,
@@ -325,6 +340,7 @@
 				EF3BDA852377B6620052854A /* ChangePasswordViewModel.swift in Sources */,
 				EF3BDA7E2377A65A0052854A /* UserInfoView.swift in Sources */,
 				EF7E20B42372379C00794CC7 /* TopViewModel.swift in Sources */,
+				EF3BDA8A2377BB420052854A /* ChangeEmailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

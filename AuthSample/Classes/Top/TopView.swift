@@ -15,8 +15,10 @@ struct TopView: View {
     @State var showSignUpModal = false
     @State var showSignInModal = false
     @State var showForgotPasswordModal = false
-    @State var showChangePasswordModal = false
+    
     @State var showUserInfoModal = false
+    @State var showChangeEmailModal = false
+    @State var showChangePasswordModal = false
     @State var showSignOutAlert = false
     
     var body: some View {
@@ -102,13 +104,29 @@ extension TopView {
                 HStack {
                     Image(systemName: "pencil.and.ellipsis.rectangle")
                         .imageScale(.large)
-                    Text("ユーザ名の変更")
+                    Text("ユーザ名を更新する")
                 }
             }
             .sheet(isPresented: $showUserInfoModal, onDismiss: {
                 self.viewModel.setupUserInfo()
             }) {
                 UserInfoView()
+            }
+            
+            // メールアドレス変更ボタン.
+            Button(action: {
+                self.showChangeEmailModal.toggle()
+            }) {
+                HStack {
+                    Image(systemName: "envelope.circle")
+                        .imageScale(.large)
+                    Text("メールアドレスを変更する")
+                }
+            }
+            .sheet(isPresented: $showChangeEmailModal, onDismiss: {
+                self.viewModel.reloadUserInfo()
+            }) {
+                ChangeEmailView()
             }
             
             // パスワード変更ボタン.
