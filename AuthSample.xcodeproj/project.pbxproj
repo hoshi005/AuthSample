@@ -13,6 +13,8 @@
 		EF3BDA7B2376F8CF0052854A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF3BDA7A2376F8CF0052854A /* README.md */; };
 		EF3BDA7E2377A65A0052854A /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA7D2377A65A0052854A /* UserInfoView.swift */; };
 		EF3BDA802377A66E0052854A /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA7F2377A66E0052854A /* UserInfoViewModel.swift */; };
+		EF3BDA832377B6550052854A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA822377B6550052854A /* ChangePasswordView.swift */; };
+		EF3BDA852377B6620052854A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BDA842377B6620052854A /* ChangePasswordViewModel.swift */; };
 		EF7E2091236CFCB100794CC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */; };
 		EF7E20B42372379C00794CC7 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A72372379C00794CC7 /* TopViewModel.swift */; };
 		EF7E20B52372379C00794CC7 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E20A82372379C00794CC7 /* TopView.swift */; };
@@ -38,6 +40,8 @@
 		EF3BDA7A2376F8CF0052854A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF3BDA7D2377A65A0052854A /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		EF3BDA7F2377A66E0052854A /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		EF3BDA822377B6550052854A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		EF3BDA842377B6620052854A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		EF7E2090236CFCB100794CC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7E20A72372379C00794CC7 /* TopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		EF7E20A82372379C00794CC7 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 			path = UserInfo;
 			sourceTree = "<group>";
 		};
+		EF3BDA812377B63F0052854A /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				EF3BDA822377B6550052854A /* ChangePasswordView.swift */,
+				EF3BDA842377B6620052854A /* ChangePasswordViewModel.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		EF7E20A52372379C00794CC7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 				EF7E20AF2372379C00794CC7 /* SignIn */,
 				EF7E20A92372379C00794CC7 /* ForgotPassword */,
 				EF3BDA7C2377A6410052854A /* UserInfo */,
+				EF3BDA812377B63F0052854A /* ChangePassword */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -303,10 +317,12 @@
 				EF7E20BC2372379C00794CC7 /* AppDelegate.swift in Sources */,
 				EF7E20B52372379C00794CC7 /* TopView.swift in Sources */,
 				EF3BDA802377A66E0052854A /* UserInfoViewModel.swift in Sources */,
+				EF3BDA832377B6550052854A /* ChangePasswordView.swift in Sources */,
 				EF7E20BD2372379C00794CC7 /* SceneDelegate.swift in Sources */,
 				EF7E20BB2372379C00794CC7 /* SignInViewModel.swift in Sources */,
 				EF7E20B82372379C00794CC7 /* CreateUserViewModel.swift in Sources */,
 				EF7E20B72372379C00794CC7 /* ForgotPasswordView.swift in Sources */,
+				EF3BDA852377B6620052854A /* ChangePasswordViewModel.swift in Sources */,
 				EF3BDA7E2377A65A0052854A /* UserInfoView.swift in Sources */,
 				EF7E20B42372379C00794CC7 /* TopViewModel.swift in Sources */,
 			);

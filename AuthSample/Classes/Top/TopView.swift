@@ -15,8 +15,9 @@ struct TopView: View {
     @State var showSignUpModal = false
     @State var showSignInModal = false
     @State var showForgotPasswordModal = false
-    @State var showSignOutAlert = false
+    @State var showChangePasswordModal = false
     @State var showUserInfoModal = false
+    @State var showSignOutAlert = false
     
     var body: some View {
         VStack(spacing: 8.0) {
@@ -108,6 +109,20 @@ extension TopView {
                 self.viewModel.setupUserInfo()
             }) {
                 UserInfoView()
+            }
+            
+            // パスワード変更ボタン.
+            Button(action: {
+                self.showChangePasswordModal.toggle()
+            }) {
+                HStack {
+                    Image(systemName: "lock.rotation")
+                        .imageScale(.large)
+                    Text("パスワードを変更する")
+                }
+            }
+            .sheet(isPresented: $showChangePasswordModal) {
+                ChangePasswordView()
             }
             
             // ユーザ情報のリフレッシュボタン.
