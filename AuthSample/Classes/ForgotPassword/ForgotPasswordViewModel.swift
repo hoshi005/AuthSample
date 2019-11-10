@@ -19,8 +19,7 @@ class ForgotPasswordViewModel: ObservableObject {
     }
     
     func sendMail(mode: Binding<PresentationMode>) {
-        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
-            guard let self = self else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 print("error = \(error.localizedDescription)")
                 return
